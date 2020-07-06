@@ -1,0 +1,16 @@
+ def play():
+        for round in rounds:
+            status_player1 = status.player1
+            status_player2 = status.player2
+            if status_player1 = "cooperate" and status_player2 = "cooperate":
+                player1_points += 3
+                player2_points += 3
+            elif state_player1 = "cooperate" and status_player2 = "defect":
+                player2_points += 5
+            elif status_player1 = "defect" and status_player2 = "cooperate":
+                player1_points += 5
+            else:
+                player1_points += 1
+                player2_points += 1
+            player1.adapt()
+            player2.adapt()
