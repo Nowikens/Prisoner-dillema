@@ -38,10 +38,10 @@ class Vetzavet():
         elif self.last_gain[-1] == 1:
             self.status = 'defective'
             self.last_gain.append(self.points-sum(self.last_gain))
-        elif self.last_gain == 3:
+        elif self.last_gain[-1] == 3:
             self.status = 'cooperate'
             self.last_gain.append(self.points-sum(self.last_gain))
-        elif self.last_gain == 5:
+        elif self.last_gain[-1] == 5:
             self.status = 'cooperate'
             self.last_gain.append(self.points-sum(self.last_gain))
 
