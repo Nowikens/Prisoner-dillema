@@ -67,39 +67,35 @@ class RandomPlayer():
         
 player1 = TitForTatPlayer()
 
-player1.strategy()
+player1.points = 0
 print(player1.status)
+player1.strategy()
 print(player1.points)
 print(player1.last_gain)
 
-player1.points = 3
+player1.points += 3
+print(player1.status)
 player1.strategy()
 print(player1.status)
 print(player1.points)
 print(player1.last_gain)
 
 player1.points += 1
-player1.strategy()
 print(player1.status)
+player1.strategy()
 print(player1.points)
 print(player1.last_gain)
 
 player1.points += 5
-player1.strategy()
 print(player1.status)
+player1.strategy()
 print(player1.points)
 print(player1.last_gain)
 
 
 player1.points += 3
-player1.strategy()
 print(player1.status)
+player1.strategy()
 print(player1.points)
 print(player1.last_gain)
 
-
-player1.points += 0
-player1.strategy()
-print(player1.status)
-print(player1.points)
-print(player1.last_gain)
