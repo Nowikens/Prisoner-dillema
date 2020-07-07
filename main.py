@@ -42,7 +42,7 @@ class TitForTatPlayer():
         self.last_gain = []
     
     def strategy(self):
-        if self.points-sum(self.last_gain) == 0
+        if self.points-sum(self.last_gain) == 0:
             self.status = 'defective'
             self.last_gain.append(self.points-sum(self.last_gain))
         elif self.points-sum(self.last_gain) == 1:
