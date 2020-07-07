@@ -1,4 +1,3 @@
-strategies = ["Always Cooperate", "Always Defect", "Always Change", "Tit for Tat", "Random"]
 import random
 
 
@@ -101,13 +100,13 @@ Player 1 chooses:
         
         """))
         
-        if choice == 1:
+        if choice1 == 1:
             self.player1 = DefectivePlayer()
-        if choice == 2:
+        if choice1 == 2:
             self.player1 = CooperativePlayer()
-        if choice == 3:
+        if choice1 == 3:
             self.player1 = TitForTatPlayer()
-        if choice == 4:
+        if choice1 == 4:
             self.player1 = RandomPlayer()
 
         choice2 = int(input("""
@@ -121,49 +120,47 @@ Player 2 chooses:
         
         """))
         
-        if choice == 1:
+        if choice2 == 1:
             self.player2 = DefectivePlayer()
-        if choice == 2:
+        if choice2 == 2:
             self.player2 = CooperativePlayer()
-        if choice == 3:
+        if choice2 == 3:
             self.player2 = TitForTatPlayer()
-        if choice == 4:
+        if choice2 == 4:
             self.player2 = RandomPlayer()
 
-        print("PLAYER2 IS Random")
-        self.player2 = RandomPlayer()
+        self.rounds = int(input("How many rounds?"))
+
         
-        
-    def play(self, rounds):
+    def play(self):
         for r in range(rounds):
             print("\nRound ", r)
             print("\nPLAYER1 chose to " , self.player1.status)
             print("\nPLAYER2 chose to " , self.player2.status)
             if self.player1.status == "cooperate" and self.player2.status == "cooperate":
-                player1.gain = 3
-                player2.gain = 3
+                self.player1.gain = 3
+                self.player2.gain = 3
             elif self.player1.status == "cooperate" and self.player2.status == "defect":
-                player1.gain = 0
-                player2.gain = 5
+                self.player1.gain = 0
+                self.player2.gain = 5
             elif self.player1.status == "defect" and self.player2.status == "cooperate":
-                player1.gain = 5
-                player2.gain = 0
+                self.player1.gain = 5
+                self.player2.gain = 0
             else:
-                player1.gain = 1
-                player2.gain = 1
+                self.player1.gain = 1
+                self.player2.gain = 1
             
-            player1.points += player1.gain
-            player2.points += player2.gain
-            player1.strategy()
-            player2.strategy()          
-            print("\nPLAYER1 gains ", player1.gain, " point, and now has ", player1.points, " points")
-            print("\nPLAYER2 gains ", player2.gain, " point, and now has ", player2.points, " points")
+            self.player1.points += self.player1.gain
+            self.player2.points += self.player2.gain
+            self.player1.strategy()
+            self.player2.strategy()          
+            print("\nPLAYER1 gains ", self.player1.gain, " point, and now has ", self.player1.points, " points")
+            print("\nPLAYER2 gains ", self.player2.gain, " point, and now has ", self.player2.points, " points")
 
     
 def main():
-    print("Sth, sth, sth, explanation")
+    
     game = Game()
-    rounds = int(input("How many rounds: "))
     game.play(rounds)
 
 
