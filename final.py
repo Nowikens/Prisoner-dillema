@@ -78,16 +78,39 @@ class RandomPlayer(Player):
 
 
 # ------------------------- GAME ------------------------------------- #
-
 class Game():
     def __init__(self):
-        print("PLAYER1 IS TitForTat")
-        self.player1 = TitForTatPlayer()
+        print(
+"""
+Hello there, You're in jail. We have your partner. This jail makes no sens so instead of years in prison, you gain points.
+That's right, points. If you two bastards cooperate, you both get 3 points. If you defect and your partner cooperates you
+get 5 points, and he gets 0, if he defects while you cooperate, you get 0 and he gets 5. 
 
-        print("PLAYER2 IS TitForTat")
+NOW CHOOSE ONE OF BELOW STRATEGIES.        
+"""
+)
+        choice = int(input("""
+
+1. Always defect.
+2. Always Cooperate
+3. Tit for Tat
+4. Random
+        
+        
+        """))
+        
+        if choice == 1:
+            self.player1 = DefectivePlayer()
+        if choice == 1:
+            self.player1 = CooperativePlayer()
+        if choice == 1:
+            self.player1 = TitForTatPlayer()
+        if choice == 1:
+            self.player1 = RandomPlayer()
+
+        print("PLAYER2 IS Random")
         self.player2 = RandomPlayer()
         
-
         
     def play(self, rounds):
         for r in range(rounds):
