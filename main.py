@@ -7,6 +7,9 @@ import random
 
 
 class DefectivePplayer():
+    """
+        This player always is defective
+    """
     def __init__(self):
         self.status = 'defect'
         self.points = 0
@@ -15,6 +18,9 @@ class DefectivePplayer():
         self.status = 'defect'
 
 class CooperativePlayer():
+    """
+        This player always is cooperative
+    """
     def __init__(self):
         self.status = 'cooperate'
         self.points = 0
@@ -23,9 +29,16 @@ class CooperativePlayer():
         self.status = 'cooperate'
 
 class TitForTatPlayer():
+    """
+        This player answers to other player's moves.
+        If other player cooperates, this player cooperates in next move.
+        If other player defects, this player defects in next move
+    """
     def __init__(self):
         self.status = 'cooperate'
         self.points = 0
+        
+        # last_gain is a list, that holds gains from previous moves
         self.last_gain = []
     
     def strategy(self):
@@ -56,6 +69,11 @@ class RandomPlayer():
         
         
 player1 = TitForTatPlayer()
+
+player1.strategy()
+print(player1.status)
+print(player1.points)
+print(player1.last_gain)
 
 player1.points = 3
 player1.strategy()
