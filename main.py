@@ -6,7 +6,7 @@ import random
 # Prisoner's dillema game
 
 
-class Defective_player():
+class DefectivePplayer():
     def __init__(self):
         self.status = 'defect'
         self.points = 0
@@ -14,7 +14,7 @@ class Defective_player():
     def strategy(self):
         self.status = 'defect'
 
-class Cooperative_player():
+class CooperativePlayer():
     def __init__(self):
         self.status = 'cooperate'
         self.points = 0
@@ -22,7 +22,7 @@ class Cooperative_player():
     def strategy(self):
         self.status = 'cooperate'
 
-class Vetzavet():
+class TitForTatPlayer():
     def __init__(self):
         self.status = 'cooperate'
         self.points = 0
@@ -46,7 +46,7 @@ class Vetzavet():
             self.last_gain.append(self.points-sum(self.last_gain))
 
 
-class Random():
+class RandomPlayer():
     possible_status = ('defect', 'cooperate')
     def __init__(self):
         self.status = random.choice(possible_status)
@@ -55,7 +55,7 @@ class Random():
         self.status = random.choice(possible_status)
         
         
-player1 = Vetzavet()
+player1 = TitForTatPlayer()
 
 player1.points = 3
 player1.strategy()
