@@ -9,7 +9,7 @@ class Game(object):
             player1_strategy = ask_for_strategy()
             
         print("Choose second strategy,\n")
-        player2_strategy = ask_for_strategy():
+        player2_strategy = ask_for_strategy()
         while player2_strategy not in strategies:
             print("There is no such strategy,\n")
             player2_strategy = ask_for_strategy()
