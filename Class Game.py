@@ -9,10 +9,10 @@ class Game(object):
             player1_strategy = ask_for_strategy()
             
         print("Choose second strategy,\n")
-        player2_startegy = ask_for_strategy():
+        player2_strategy = ask_for_strategy():
         while player2_strategy not in strategies:
             print("There is no such strategy,\n")
-            player2_strategy = ask_for_strategies()
+            player2_strategy = ask_for_strategy()
             
         player1_points = 0
         player2_points = 0
@@ -28,13 +28,13 @@ class Game(object):
         for r in rounds:
             status_player1 = status.player1
             status_player2 = status.player2
-            if status_player1 = "cooperate" and status_player2 = "cooperate":
+            if status_player1 == "cooperate" and status_player2 == "cooperate":
                 player1_gain = 3
                 player2_gain = 3
-            elif state_player1 = "cooperate" and status_player2 = "defect":
+            elif state_player1 == "cooperate" and status_player2 == "defect":
                 player1_gain = 0
                 player2_gain = 5
-            elif status_player1 = "defect" and status_player2 = "cooperate":
+            elif status_player1 == "defect" and status_player2 == "cooperate":
                 player1_gain = 5
                 player2_gain = 0
             else:
