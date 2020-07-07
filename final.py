@@ -89,7 +89,9 @@ get 5 points, and he gets 0, if he defects while you cooperate, you get 0 and he
 NOW CHOOSE ONE OF BELOW STRATEGIES.        
 """
 )
-        choice = int(input("""
+        
+        choice1 = int(input("""
+Player 1 chooses:
 
 1. Always defect.
 2. Always Cooperate
@@ -101,12 +103,32 @@ NOW CHOOSE ONE OF BELOW STRATEGIES.
         
         if choice == 1:
             self.player1 = DefectivePlayer()
-        if choice == 1:
+        if choice == 2:
             self.player1 = CooperativePlayer()
-        if choice == 1:
+        if choice == 3:
             self.player1 = TitForTatPlayer()
-        if choice == 1:
+        if choice == 4:
             self.player1 = RandomPlayer()
+
+        choice2 = int(input("""
+Player 2 chooses:
+
+1. Always defect.
+2. Always Cooperate
+3. Tit for Tat
+4. Random
+        
+        
+        """))
+        
+        if choice == 1:
+            self.player2 = DefectivePlayer()
+        if choice == 2:
+            self.player2 = CooperativePlayer()
+        if choice == 3:
+            self.player2 = TitForTatPlayer()
+        if choice == 4:
+            self.player2 = RandomPlayer()
 
         print("PLAYER2 IS Random")
         self.player2 = RandomPlayer()
