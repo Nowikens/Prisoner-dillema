@@ -16,7 +16,7 @@ class Game(object):
             
         player1_points = 0
         player2_points = 0
-        rounds = int(input("How many rounds: ")
+        rounds = int(input("How many rounds: "))
 
     def ask_for_strategy(self):
         response = None
