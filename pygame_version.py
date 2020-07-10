@@ -9,9 +9,10 @@ def table(window):
     # color
     window.fill((145, 254, 222))
     # 1.name of font 2.height
-    myfont = pygame.font.SysFont('Comic Sans MS', 10)
+    myfont = pygame.font.SysFont('Comic Sans MS', 12)
     # 1.what text 2.? 3.color
-    textsurface = myfont.render('Some Text', False, (0, 0, 0))
+    player1_text = myfont.render('Player 1 /n nstrategy', False, (0, 0, 0))
+    player2_text = myfont.render('Player 2 /n nstrategy', False, (0, 0, 0))
     
     # horizontal lines 1.where(surface) 2.color 3.start-pos 4.end-pos 5.width
     pygame.draw.line(window, (0,0,0), (50,50), (450, 50), 1)
@@ -27,7 +28,8 @@ def table(window):
     
     
     # blitting surface, 1.what surface 2.new position
-    window.blit(textsurface,(80,80))
+    window.blit(player1_text,(50,60))
+    window.blit(player2_text,(50,110))
     
 while True:
         for event in pygame.event.get():
