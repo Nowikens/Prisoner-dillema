@@ -162,3 +162,6 @@ def main():
 main()
 
 
+input("press Enter to end")
+
+#Other Player classes to add: Checks For Tat, Always Changes, Grudger,...
