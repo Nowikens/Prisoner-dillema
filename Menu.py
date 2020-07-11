@@ -7,12 +7,46 @@ pygame.display.set_caption("Prisoner Dilemma")
 screen = pygame.display.set_mode((1000, 700))
 
 font = pygame.font.SysFont(None, 20)
+font2 = pygame.font.SysFont(None, 50)
 
+
+def draw_wraped_text(text, font, color, surface, rect, aa=False, bkg=None):
+        rect = pygame.Rect(rect)
+        x = rect.left
+        y = rect.top
+        lineSpacing = -2
+
+        fontHeight = font.size("Tg")[1]
+        while text:
+                i = 1
+                if y + fontHeight > rect.bottom:
+                        break
+                while font.size(text[:i])[0] < rect.width and i < len(text):
+                        i += 1
+
+                if i < len(text):
+                        i = text.rfind(" ", 0, i) + 1
+
+                if bkg:
+                        image = font.render(text[:i], 1, color, bkg)
+                        image.set_colorkey(bkg)
+                else:
+                        image = font.render(text[:i], aa, color)
+                surface.blit(image, (x, y))
+                y += fontHeight + lineSpacing
+                text = text[i:]
+        return text
+
+        
 def draw_text(text, font, color, surface, x, y):
         textobj = font.render(text, 1, color)
         textrect = textobj.get_rect()
         textrect.topleft = (x, y)
         surface.blit(textobj, textrect)
+                
+
+info = "Hello there, You're in jail. We have your partner. This jail makes no sense so instead of years in prison, you gain points. That's right, points. If you two bastards cooperate, you both get 3 points. If you defect and your partner cooperates you get 5 points, and he gets 0, if he defects while you cooperate, you get 0 and he gets 5. If you both defect, you will both get 1 point."
+
 
 click = False
 
@@ -20,12 +54,7 @@ def main_menu():
         while True:
 
                 screen.fill((0,0,0))
-                draw_text("""
-Hello there, You're in jail. We have your partner. This jail makes no sense so instead of years in prison, you gain points.
-That's right, points. If you two bastards cooperate, you both get 3 points. If you defect and your partner cooperates you
-get 5 points, and he gets 0, if he defects while you cooperate, you get 0 and he gets 5. If you both defect, you will both get 1 point.
-""",
-                          font, (255, 255, 255), screen, 40, 20)
+                draw_wraped_text(info, font2, (255, 255, 255), screen, (40, 20, 800, 500))
 
                 mx, my = pygame.mouse.get_pos()
         
